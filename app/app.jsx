@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Input from './components/input.jsx';
 import ListItem from './components/listItem.jsx';
 
+import './css/app.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
