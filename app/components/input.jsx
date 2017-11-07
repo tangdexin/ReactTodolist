@@ -26,9 +26,10 @@ class Input extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="inputDiv">
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" ref={(input) => { this.textInput = input; }} placeholder="请输入代办事项" />
+                <label className="title">ToDoList</label>
+                    <input type="text" id="todoInput" ref={(input) => { this.textInput = input; }} placeholder="请输入代办事项" />
                 </form>
             </div>
         )

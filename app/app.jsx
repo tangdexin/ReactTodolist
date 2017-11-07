@@ -72,14 +72,18 @@ class App extends React.Component {
     const lengthTodoDone = this.state.todosDone.length;
     return (
       <div>
-        <Input addtodoInput={this.addtodoApp} />
-        <p>正在进行{lengthTodoDoing}件任务</p>
-
-        <ListItem todos={this.state.todosDoing} appChangeCheck={this.changeCheckDoing} appDeleteTodo={this.deleteTodoDoing} />
-        <p>已经完成{lengthTodoDone}件任务</p>
-        <ListItem todos={this.state.todosDone} appChangeCheck={this.changeCheckDone} appDeleteTodo={this.deleteTodoDone} />
-        <hr />
-        <p>共计{lengthTodoDoing + lengthTodoDone}件任务</p>
+        <div className="header">
+          <Input addtodoInput={this.addtodoApp} />
+        </div>
+        <div className="todoBody">
+          <p>正在进行{lengthTodoDoing}件任务</p>
+          <ListItem className="doings" todos={this.state.todosDoing} appChangeCheck={this.changeCheckDoing} appDeleteTodo={this.deleteTodoDoing} />
+          <p>已经完成{lengthTodoDone}件任务</p>
+          <ListItem className="dones" todos={this.state.todosDone} appChangeCheck={this.changeCheckDone} appDeleteTodo={this.deleteTodoDone} />
+          <hr />
+          <p>共计{lengthTodoDoing + lengthTodoDone}件任务</p>
+        </div>
+        
       </div>
     )
   }

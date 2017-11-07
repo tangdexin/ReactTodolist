@@ -17,7 +17,7 @@ class List extends React.Component {
         this.props.deleteTodo(this.props.index);
     }
     render() {
-        return <li><input type="checkbox" checked={this.props.isDone} onChange={this.changeCheck}/>
+        return <li><input type="checkbox" className="todoLi" checked={this.props.isDone} onChange={this.changeCheck}/>
             <span>{this.props.value}</span>
             <input type="button" value='X' onClick={this.deleteLi}/>
         </li>
