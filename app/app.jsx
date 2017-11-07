@@ -12,6 +12,7 @@ class App extends React.Component{
         this.state={todos:[]};
         this.addtodoApp = this.addtodoApp.bind(this);
         this.changeCheckBox = this.changeCheckBox.bind(this);
+        this.appDeleteTodo = this.appDeleteTodo.bind(this);
 
     }
     addtodoApp(newTodo){
@@ -25,12 +26,18 @@ class App extends React.Component{
             todos: this.state.todos,            
         })
     }
+    appDeleteTodo(index){
+      this.state.todos.splice(index,1);
+      this.setState({
+        todos:this.state.todos
+      })
+    }
     render(){
         return(
             <div>
                 <Input addtodoInput={this.addtodoApp}/>
                 <p>doing</p>
-                <ListItem todos={this.state.todos} appChangeCheck={this.changeCheckBox}/>
+                <ListItem todos={this.state.todos} appChangeCheck={this.changeCheckBox} appDeleteTodo={this.appDeleteTodo}/>
                 <p>done</p>
                 {/* <ListItem todos={this.state.todos}/> */}
             </div>
