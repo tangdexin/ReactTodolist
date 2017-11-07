@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = { todos: [], todosDoing: [], todosDone: [] };
     this.addtodoApp = this.addtodoApp.bind(this);
-    this.changeCheckBox = this.changeCheckBox.bind(this);
+    // this.changeCheckBox = this.changeCheckBox.bind(this);
     this.changeCheckDoing = this.changeCheckDoing.bind(this);
     this.changeCheckDone = this.changeCheckDone.bind(this);
     this.deleteTodoDoing = this.deleteTodoDoing.bind(this);
@@ -23,31 +23,31 @@ class App extends React.Component {
       todosDoing: this.state.todosDoing
     });
   }
-  changeCheckBox(index, isDone) {
-    this.state.todos[index].isDone = isDone;
-    this.setState({
-      todos: this.state.todos,
-    })
-  }
-  changeCheckDoing(index,isDone){
+  // changeCheckBox(index, isDone) {
+  //   this.state.todos[index].isDone = isDone;
+  //   this.setState({
+  //     todos: this.state.todos,
+  //   })
+  // }
+  changeCheckDoing(index, isDone) {
     this.state.todosDoing[index].isDone = isDone;
     this.setState({
-      todosDoing:this.state.todos.filter(function(n){
+      todosDoing: this.state.todos.filter(function (n) {
         return n.isDone == false;
       }),
-      todosDone: this.state.todos.filter(function(n){
+      todosDone: this.state.todos.filter(function (n) {
         return n.isDone == true;
       })
     })
   }
 
-  changeCheckDone(index,isDone){
+  changeCheckDone(index, isDone) {
     this.state.todosDone[index].isDone = isDone;
     this.setState({
-      todosDoing:this.state.todos.filter(function(n){
+      todosDoing: this.state.todos.filter(function (n) {
         return n.isDone == false;
       }),
-      todosDone: this.state.todos.filter(function(n){
+      todosDone: this.state.todos.filter(function (n) {
         return n.isDone == true;
       })
     })
@@ -66,13 +66,18 @@ class App extends React.Component {
     })
   }
   render() {
+    const lengthTodoDoing = this.state.todosDoing.length;
+    const lengthTodoDone = this.state.todosDone.length;
     return (
       <div>
         <Input addtodoInput={this.addtodoApp} />
-        <p>doing</p>
+        <p>doing 数量：{lengthTodoDoing}</p>
+
         <ListItem todos={this.state.todosDoing} appChangeCheck={this.changeCheckDoing} appDeleteTodo={this.deleteTodoDoing} />
-        <p>done</p>
+        <p>done 数量：{lengthTodoDone}</p>
         <ListItem todos={this.state.todosDone} appChangeCheck={this.changeCheckDone} appDeleteTodo={this.deleteTodoDone} />
+        <hr />
+        <p>共计：{lengthTodoDoing + lengthTodoDone}</p>
       </div>
     )
   }
