@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Number from './number.jsx';
 
 class List extends React.Component {
     constructor(props) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Number from './number.jsx';
 import List from './list.jsx';
 
 class ListItem extends React.Component {
