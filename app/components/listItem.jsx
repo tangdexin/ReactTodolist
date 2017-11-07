@@ -18,8 +18,8 @@ class ListItem extends React.Component {
     itemChangeCheck(index,isDone){
         this.props.appChangeCheck(index,isDone);
     }
-    deleteTodo(){
-        this.props.appDeleteTodo()
+    deleteTodo(index){
+        this.props.appDeleteTodo(index)
     }
     render() {
         return (
