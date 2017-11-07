@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom';
 import Number from './number.jsx';
 import List from './list.jsx';
 
-
-// function List(props) {
-//     return <li>
-//         <input type="checkbox" checked={props.isDone}/>{props.value}
-//         </li>
-// }
 class ListItem extends React.Component {
     constructor(props){
         super(props);
