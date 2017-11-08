@@ -10,7 +10,6 @@ class App extends React.Component {
     super(props);
     this.state = { todos: [], todosDoing: [], todosDone: [] };
     this.addtodoApp = this.addtodoApp.bind(this);
-    // this.changeCheckBox = this.changeCheckBox.bind(this);
     this.changeCheckDoing = this.changeCheckDoing.bind(this);
     this.changeCheckDone = this.changeCheckDone.bind(this);
     this.deleteTodoDoing = this.deleteTodoDoing.bind(this);
@@ -25,12 +24,7 @@ class App extends React.Component {
       todosDoing: this.state.todosDoing
     });
   }
-  // changeCheckBox(index, isDone) {
-  //   this.state.todos[index].isDone = isDone;
-  //   this.setState({
-  //     todos: this.state.todos,
-  //   })
-  // }
+
   changeCheckDoing(index, isDone) {
     this.state.todosDoing[index].isDone = isDone;
     this.setState({
