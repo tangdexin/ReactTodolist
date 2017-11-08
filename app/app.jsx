@@ -76,14 +76,14 @@ class App extends React.Component {
           <Input addtodoInput={this.addtodoApp} />
         </div>
         <div className="todoBody">
-          <p>正在进行{lengthTodoDoing}件任务</p>
+          <h2>正在进行<span className="count">{lengthTodoDoing}</span></h2>
           <ListItem className="doings" todos={this.state.todosDoing} appChangeCheck={this.changeCheckDoing} appDeleteTodo={this.deleteTodoDoing} />
-          <p>已经完成{lengthTodoDone}件任务</p>
+          <h2>已经完成 <span className="count">{lengthTodoDone}</span></h2>
           <ListItem className="dones" todos={this.state.todosDone} appChangeCheck={this.changeCheckDone} appDeleteTodo={this.deleteTodoDone} />
           <hr />
-          <p>共计{lengthTodoDoing + lengthTodoDone}件任务</p>
+          <h2>共计{lengthTodoDoing + lengthTodoDone}件任务</h2>
         </div>
-        
+
       </div>
     )
   }

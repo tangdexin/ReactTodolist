@@ -19,7 +19,7 @@ class List extends React.Component {
     render() {
         return <li><input type="checkbox" className="todoLi" checked={this.props.isDone} onChange={this.changeCheck}/>
             <span>{this.props.value}</span>
-            <input type="button" value='X' onClick={this.deleteLi}/>
+            <a type="button"  onClick={this.deleteLi}>-</a>
         </li>
     }
 }
