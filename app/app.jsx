@@ -50,15 +50,20 @@ class App extends React.Component {
   }
   deleteTodoDoing(index) {
     this.state.todosDoing.splice(index, 1);
+    this.state.todos.splice(index, 1);    
     this.setState({
-      todosDoing: this.state.todosDoing
+      todosDoing: this.state.todosDoing,
+      todos:this.state.todos
     })
   }
 
   deleteTodoDone(index) {
     this.state.todosDone.splice(index, 1);
+    this.state.todos.splice(index, 1);    
     this.setState({
-      todosDone: this.state.todosDone
+      todosDone: this.state.todosDone,
+      todos:this.state.todos
+      
     })
   }
   render() {
