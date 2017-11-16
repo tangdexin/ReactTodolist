@@ -63,7 +63,6 @@ class App extends React.Component {
     this.setState({
       todosDone: this.state.todosDone,
       todos:this.state.todos
-      
     })
   }
   render() {
