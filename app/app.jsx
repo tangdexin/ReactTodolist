@@ -23,6 +23,7 @@ class App extends React.Component {
       todos: this.state.todos,
       todosDoing: this.state.todosDoing
     });
+    console.log(this.state.todos)
   }
 
   changeCheckDoing(index, isDone) {
@@ -50,19 +51,19 @@ class App extends React.Component {
   }
   deleteTodoDoing(index) {
     this.state.todosDoing.splice(index, 1);
-    this.state.todos.splice(index, 1);    
+    this.state.todos = [...this.state.todosDoing,...this.state.todosDone]    
     this.setState({
+      todos:this.state.todos,      
       todosDoing: this.state.todosDoing,
-      todos:this.state.todos
     })
   }
 
   deleteTodoDone(index) {
     this.state.todosDone.splice(index, 1);
-    this.state.todos.splice(index, 1);    
+    this.state.todos = [...this.state.todosDoing,...this.state.todosDone]    
     this.setState({
+      todos:this.state.todos,      
       todosDone: this.state.todosDone,
-      todos:this.state.todos
     })
   }
   render() {
